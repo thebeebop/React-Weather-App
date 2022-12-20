@@ -1,25 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import Search from "./components/Search";
+import MainDisplay from "./components/MainDisplay";
+import { useState, useEffect } from "react";
 
 function App() {
+  const [location, setLocation] = useState(null);
+  const [error, setError] = useState(null);
+  const [weatherObj, setWeatherObj] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {}, [location]);
+
+  // if (isLoading) {
+  //   return <p>Loading...</p>;
+  // } else {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Search location={location} setLocation={setLocation} />
+      <MainDisplay weatherObj={weatherObj} />
     </div>
   );
 }
+// }
 
 export default App;
