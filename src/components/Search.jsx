@@ -1,24 +1,35 @@
 /// Remember to make frequent commits to github
+import { useState } from "react";
 
-export default function Search({ location, setLocation }) {
+export default function Search({ setLocation }) {
+  const [search, setSearch] = useState("");
+
   const handleChange = (e) => {
     let value = e.target.value;
-    setLocation(value);
+    setSearch(value);
   };
 
-  const handleSubmit = () => {
-    setLocation(null);
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setLocation(search);
+    setSearch("");
   };
   return (
     <>
-      <form onSubmit={handleSubmit}>
+      <form
+        onSubmit={(e) => {
+          handleSubmit(e);
+        }}
+      >
         <label>Location:</label>
         <input
           placeholder="e.g. London"
-          value={location}
-          onChange={handleChange(e)}
+          value={search}
+          onChange={(e) => {
+            handleChange(e);
+          }}
         ></input>
-        <submit>Search</submit>
+        <button value="submit">Search</button>
       </form>
     </>
   );

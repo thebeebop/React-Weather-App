@@ -1,3 +1,5 @@
+import { useState, useEffect } from "react";
+
 export default function MainDisplay({ weatherObj }) {
   const [cityName, setCityName] = useState(null);
   const [countryName, setCountryName] = useState(null);
@@ -12,7 +14,7 @@ export default function MainDisplay({ weatherObj }) {
 
   return (
     <>
-      <CityAndDate
+      {/* <CityAndDate
         cityName={cityName}
         countryName={countryName}
         dateToday={dateToday}
@@ -24,7 +26,7 @@ export default function MainDisplay({ weatherObj }) {
         feelsLike={feelsLike}
         uvIndex={uvIndex}
         windSpeed={windSpeed}
-      />
+      /> */}
     </>
   );
 }
