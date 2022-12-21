@@ -1,17 +1,74 @@
 import { useState, useEffect } from "react";
-
-export default function MainDisplay({ weatherObj }) {
-  const [cityName, setCityName] = useState(null);
-  const [countryName, setCountryName] = useState(null);
+import { dateCalibrator } from "../utils/date-calibrator";
+import { uvIndexCalc } from "../utils/uvi-determinator";
+export default function MainDisplay({ weatherObj, city, country }) {
   const [dateToday, setDateToday] = useState(null);
-  const [temperature, setTemperature] = useState(null);
-  const [weatherDescription, setWeatherDescription] = useState(null);
-  const [image, setImage] = useState(null);
-  const [humidity, setHumidity] = useState(null);
-  const [feelsLike, setFeelsLike] = useState(null);
-  const [uvIndex, setUvIndex] = useState(null);
-  const [windSpeed, setWindSpeed] = useState(null);
+  useEffect(() => {
+    const date = dateCalibrator();
+    setDateToday(date);
+  }, [weatherObj]);
 
+  const [temperature, setTemperature] = useState(null);
+  useEffect(() => {
+    const value = Math.round(weatherObj.current.temp);
+    const temp = value + "°C";
+    setTemperature(temp);
+  }, [weatherObj]);
+
+  const [weatherDescription, setWeatherDescription] = useState(null);
+  useEffect(() => {
+    const description =
+      weatherObj.current.weather[0].main +
+      ", " +
+      weatherObj.current.weather[0].description;
+    setWeatherDescription(description);
+  }, [weatherObj]);
+
+  const [image, setImage] = useState(null);
+  useEffect(() => {
+    const image = weatherObj.current.weather[0].icon;
+    const imageURL = `https://openweathermap.org/img/wn/${image}@2x.png`;
+    setImage(imageURL);
+  }, [weatherObj]);
+
+  const [humidity, setHumidity] = useState(null);
+  useEffect(() => {
+    const value = weatherObj.current.humidity;
+    const humidity = value + "%";
+    setHumidity(humidity);
+  }, [weatherObj]);
+
+  const [feelsLike, setFeelsLike] = useState(null);
+  useEffect(() => {
+    const value = Math.round(weatherObj.current.feels_like);
+    const feels = value + "°C";
+    setFeelsLike(feels);
+  }, [weatherObj]);
+
+  const [uvIndex, setUvIndex] = useState(null);
+  useEffect(() => {
+    const value = weatherObj.current.uvi;
+    const index = uvIndexCalc(value);
+    setUvIndex(index);
+  }, [weatherObj]);
+
+  const [windSpeed, setWindSpeed] = useState(null);
+  useEffect(() => {
+    const value = weatherObj.current.wind_speed;
+    const speed = Math.round((value / 1000) * 3.6 * 100) / 100 + "km/h";
+    setWindSpeed(speed);
+  }, [weatherObj]);
+
+  console.log(
+    dateToday,
+    temperature,
+    weatherDescription,
+    image,
+    humidity,
+    feelsLike,
+    uvIndex,
+    windSpeed
+  );
   return (
     <>
       {/* <CityAndDate
