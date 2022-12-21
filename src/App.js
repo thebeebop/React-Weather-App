@@ -8,15 +8,18 @@ function App() {
   const [error, setError] = useState(null);
   const [weatherObj, setWeatherObj] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
+  const [city, setCity] = useState("");
+  const [country, setCountry] = useState("");
 
   useEffect(() => {
     setIsLoading(true);
     getGeoCodes(location).then((response) => {
       const lat = response.data[0].lat;
       const lon = response.data[0].lon;
+      setCity(response.data[0].name);
+      setCountry(response.data[0].country);
       getWeatherData(lat, lon).then((response) => {
         setWeatherObj(response.data);
-        console.log(weatherObj, "<<<weatherObj");
         setIsLoading(false);
       });
     });
@@ -33,7 +36,7 @@ function App() {
     return (
       <div className="App">
         <Search location={location} setLocation={setLocation} />
-        <MainDisplay weatherObj={weatherObj} />
+        <MainDisplay weatherObj={weatherObj} city={city} country={country} />
       </div>
     );
   }
