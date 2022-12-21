@@ -2,6 +2,8 @@ import { useState, useEffect } from "react";
 import { dateCalibrator } from "../utils/date-calibrator";
 import { uvIndexCalc } from "../utils/uvi-determinator";
 import CityAndDate from "./CityAndDate";
+import TemperatureAndImage from "./TemperatureAndImage";
+
 export default function MainDisplay({ weatherObj, city, country }) {
   const [dateToday, setDateToday] = useState(null);
   useEffect(() => {
@@ -63,13 +65,17 @@ export default function MainDisplay({ weatherObj, city, country }) {
   return (
     <>
       <CityAndDate city={city} country={country} dateToday={dateToday} />
-      {/* <TemperatureAndImage temperature={temperature} image={image} weatherDescription={weatherDescription} />
-      <ExtraInfo
+      <TemperatureAndImage
+        temperature={temperature}
+        image={image}
+        weatherDescription={weatherDescription}
+      />
+      {/* <ExtraInfo
         humidity={humidity}
         feelsLike={feelsLike}
         uvIndex={uvIndex}
         windSpeed={windSpeed}
-      />  */}
+      /> */}
     </>
   );
 }
