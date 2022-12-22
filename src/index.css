@@ -8,14 +8,71 @@
 
 body {
   height: 100vh;
-  font-family:'Poppins', sans-serif
+  font-family:'Poppins', sans-serif;
+  background-color: rgb(235, 235, 165);
+}
+
+#root {
+  height: 100%;
+}
+
+.App {
+  height:100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 20px;
+}
+
+.AppTwo {
+  height:100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+
+
+
+.search-container {
+  margin-top: 20px;
+}
+
+.main-display-container {
+  display: flex;
+  height: 600px;
+  width: 100%;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+}
+
+.city-and-date-container {
+  margin-top: 40px;
+  /* height: 10px; */
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.city-name {
+  font-size: 25px;
+  margin-bottom: 10px;
+}
+
+.date {
+  font-size: 18px;
+  font-weight: 500;
 }
 
 .extra-info-container {
-  padding:20px;
   display:grid;
   min-height: 150px;
   max-height: 300px;
+  width:100%;
   justify-items: center;
   grid-template-rows: 1fr 1fr;
   grid-template-columns: 1fr 1fr 1fr;
@@ -27,4 +84,35 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+
+.temperature-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 300px;
+  width: 100%;
+}
+
+.temp-and-description-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+#temperature {
+  font-size: 100px;
+}
+
+#weather-description {
+  font-size: 20px
+}
+
+#loading {
+top: 50%;
+position: absolute;
 }

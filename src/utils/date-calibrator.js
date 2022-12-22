@@ -1,14 +1,6 @@
 function dateCalibrator() {
   var objToday = new Date(),
-    weekday = new Array(
-      "Sunday",
-      "Monday",
-      "Tuesday",
-      "Wednesday",
-      "Thursday",
-      "Friday",
-      "Saturday"
-    ),
+    weekday = new Array("Sun", "Mon", "Tues", "Wed", "Thu", "Fri", "Sat"),
     dayOfWeek = weekday[objToday.getDay()],
     domEnder = new Array(
       "th",
@@ -34,18 +26,18 @@ function dateCalibrator() {
             )
           ],
     months = new Array(
-      "January",
-      "February",
-      "March",
-      "April",
+      "Jan",
+      "Feb",
+      "Mar",
+      "Apr",
       "May",
-      "June",
-      "July",
-      "August",
-      "September",
-      "October",
-      "November",
-      "December"
+      "Jun",
+      "Jul",
+      "Aug",
+      "Sep",
+      "Oct",
+      "Nov",
+      "Dec"
     ),
     curMonth = months[objToday.getMonth()];
   var today = dayOfWeek + ", " + dayOfMonth + " " + curMonth;

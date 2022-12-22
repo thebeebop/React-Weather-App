@@ -17,6 +17,7 @@ export default function Search({ setLocation }) {
   return (
     <>
       <form
+        className="search-container"
         onSubmit={(e) => {
           handleSubmit(e);
         }}

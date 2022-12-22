@@ -4,10 +4,12 @@ export default function TemperatureAndImage({
   weatherDescription,
 }) {
   return (
-    <>
-      <h1>{temperature}</h1>
-      <p>{weatherDescription}</p>
-      <img src={image} />
-    </>
+    <div className="temperature-container">
+      <div className="temp-and-description-container">
+        <h1 id="temperature">{temperature}</h1>
+        <img src={image} />
+      </div>
+      <p id="weather-description">{weatherDescription}</p>
+    </div>
   );
 }
