@@ -7,7 +7,7 @@ import { getGeoCodes, getWeatherData } from "./utils/api-caller.js";
 
 function App() {
   const [location, setLocation] = useState("liverpool");
-  const [error, setError] = useState(null);
+  const [error, setError] = useState(false);
   const [weatherObj, setWeatherObj] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
   const [city, setCity] = useState("");
@@ -21,27 +21,54 @@ function App() {
         const lon = response.data[0].lon;
         setCity(response.data[0].name);
         setCountry(response.data[0].country);
-        getWeatherData(lat, lon).then((response) => {
-          setWeatherObj(response.data);
-          setIsLoading(false);
-        });
+        getWeatherData(lat, lon)
+          .then((response) => {
+            setWeatherObj(response.data);
+            setIsLoading(false);
+          })
+          .catch((err) => {
+            setError(true);
+            console.log(err, "<<woops");
+          });
       })
       .catch((err) => {
+        setError(true);
         console.log(err, "<<< err");
       });
   }, [location]);
 
+  if (error) {
+    return (
+      <div className="AppTwo">
+        <Search
+          location={location}
+          setLocation={setLocation}
+          setError={setError}
+        />
+        <p id="error">Uh Oh! We couldn't find that one. Please, try again.</p>
+      </div>
+    );
+  }
+
   if (isLoading) {
     return (
       <div className="AppTwo">
-        <Search location={location} setLocation={setLocation} />
+        <Search
+          location={location}
+          setLocation={setLocation}
+          setError={setError}
+        />
         <p id="loading">Loading...</p>
       </div>
     );
   } else {
     return (
       <div className="App">
-        <Search location={location} setLocation={setLocation} />
+        <Search
+          location={location}
+          setLocation={setLocation}
+          setError={setError}
+        />
         <MainDisplay weatherObj={weatherObj} city={city} country={country} />
       </div>
     );
