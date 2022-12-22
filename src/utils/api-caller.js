@@ -6,14 +6,14 @@ const units = "metric";
 function getGeoCodes(location) {
   return axios({
     method: "get",
-    url: `http://api.openweathermap.org/geo/1.0/direct?q=${location}&limit=1&appid=${apiKey}`,
+    url: `http://api.openweathermap.org/geo/1.0/direct?q=${location}&limit=3&appid=${apiKey}`,
     timeout: 3000,
   })
     .then((response) => {
+      console.log(response);
       return response;
     })
     .catch((err) => {
-      console.log(err, "<<<from api-caller");
       return err;
     });
 }
@@ -27,7 +27,6 @@ function getWeatherData(lat, lon) {
       return response;
     })
     .catch((err) => {
-      console.log(err, "errr");
       return err;
     });
 }
