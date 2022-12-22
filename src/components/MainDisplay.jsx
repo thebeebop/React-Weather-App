@@ -14,7 +14,7 @@ export default function MainDisplay({ weatherObj, city, country }) {
   const [temperature, setTemperature] = useState(null);
   useEffect(() => {
     const value = Math.round(weatherObj.current.temp);
-    const temp = value + "°C";
+    const temp = value + "°";
     setTemperature(temp);
   }, [weatherObj]);
 
@@ -44,7 +44,7 @@ export default function MainDisplay({ weatherObj, city, country }) {
   const [feelsLike, setFeelsLike] = useState(null);
   useEffect(() => {
     const value = Math.round(weatherObj.current.feels_like);
-    const feels = value + "°C";
+    const feels = value + "°";
     setFeelsLike(feels);
   }, [weatherObj]);
 
@@ -63,7 +63,7 @@ export default function MainDisplay({ weatherObj, city, country }) {
   }, [weatherObj]);
 
   return (
-    <>
+    <div className="main-display-container">
       <CityAndDate city={city} country={country} dateToday={dateToday} />
       <TemperatureAndImage
         temperature={temperature}
@@ -76,6 +76,6 @@ export default function MainDisplay({ weatherObj, city, country }) {
         uvIndex={uvIndex}
         windSpeed={windSpeed}
       />
-    </>
+    </div>
   );
 }

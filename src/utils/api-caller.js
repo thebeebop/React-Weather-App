@@ -4,12 +4,17 @@ const apiKey = "b89c2f4cd67785bc98a5ce98f95147b1";
 const units = "metric";
 
 function getGeoCodes(location) {
-  return axios
-    .get(
-      `http://api.openweathermap.org/geo/1.0/direct?q=${location}&limit=1&appid=${apiKey}`
-    )
+  return axios({
+    method: "get",
+    url: `http://api.openweathermap.org/geo/1.0/direct?q=${location}&limit=1&appid=${apiKey}`,
+    timeout: 1000,
+  })
     .then((response) => {
       return response;
+    })
+    .catch((err) => {
+      console.log(err, "<<<from api-caller");
+      return err;
     });
 }
 
