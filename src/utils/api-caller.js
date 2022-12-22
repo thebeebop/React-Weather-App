@@ -7,7 +7,7 @@ function getGeoCodes(location) {
   return axios({
     method: "get",
     url: `http://api.openweathermap.org/geo/1.0/direct?q=${location}&limit=1&appid=${apiKey}`,
-    timeout: 1000,
+    timeout: 3000,
   })
     .then((response) => {
       return response;
@@ -25,6 +25,11 @@ function getWeatherData(lat, lon) {
     )
     .then((response) => {
       return response;
+    })
+    .catch((err) => {
+      console.log(err, "errr");
+      return err;
     });
 }
+
 export { getGeoCodes, getWeatherData };

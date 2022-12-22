@@ -34,15 +34,13 @@ body {
   padding: 20px;
 }
 
-
-
 .search-container {
   margin-top: 20px;
 }
 
 .main-display-container {
   display: flex;
-  height: 600px;
+  height: 650px;
   width: 100%;
   justify-content: space-between;
   flex-direction: column;
@@ -50,8 +48,7 @@ body {
 }
 
 .city-and-date-container {
-  margin-top: 40px;
-  /* height: 10px; */
+  margin-top: 50px;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -102,7 +99,10 @@ body {
   align-items: center;
 }
 
-
+.extra-info-titles {
+  font-weight: 600;
+  margin-bottom: 5px;
+}
 
 #temperature {
   font-size: 100px;
@@ -115,4 +115,14 @@ body {
 #loading {
 top: 50%;
 position: absolute;
+font-size: 40px;
+font-weight: 600;
+}
+
+#error {
+  padding: 20px;
+  top: 25%;
+  position: absolute;
+  font-size: 40px;
+  font-weight: 600;
 }

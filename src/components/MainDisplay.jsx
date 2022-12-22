@@ -4,6 +4,7 @@ import { uvIndexCalc } from "../utils/uvi-determinator";
 import CityAndDate from "./CityAndDate";
 import TemperatureAndImage from "./TemperatureAndImage";
 import ExtraInfo from "./ExtraInfo";
+
 export default function MainDisplay({ weatherObj, city, country }) {
   const [dateToday, setDateToday] = useState(null);
   useEffect(() => {
@@ -51,6 +52,7 @@ export default function MainDisplay({ weatherObj, city, country }) {
   const [uvIndex, setUvIndex] = useState(null);
   useEffect(() => {
     const value = weatherObj.current.uvi;
+    console.log(value, "<<<uvi");
     const index = uvIndexCalc(value);
     setUvIndex(index);
   }, [weatherObj]);

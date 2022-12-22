@@ -1,7 +1,7 @@
 /// Remember to make frequent commits to github
 import { useState } from "react";
 
-export default function Search({ setLocation }) {
+export default function Search({ setLocation, setError }) {
   const [search, setSearch] = useState("");
 
   const handleChange = (e) => {
@@ -13,6 +13,7 @@ export default function Search({ setLocation }) {
     e.preventDefault();
     setLocation(search);
     setSearch("");
+    setError(false);
   };
   return (
     <>
