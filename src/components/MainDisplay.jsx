@@ -52,7 +52,6 @@ export default function MainDisplay({ weatherObj, city, country }) {
   const [uvIndex, setUvIndex] = useState(null);
   useEffect(() => {
     const value = weatherObj.current.uvi;
-    console.log(value, "<<<uvi");
     const index = uvIndexCalc(value);
     setUvIndex(index);
   }, [weatherObj]);

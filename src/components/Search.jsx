@@ -25,7 +25,7 @@ export default function Search({ setLocation, setError }) {
       >
         <label>Location:</label>
         <input
-          placeholder="e.g. London"
+          placeholder="e.g. London, GB"
           value={search}
           onChange={(e) => {
             handleChange(e);

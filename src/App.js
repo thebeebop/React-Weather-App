@@ -3,8 +3,6 @@ import MainDisplay from "./components/MainDisplay";
 import { useState, useEffect } from "react";
 import { getGeoCodes, getWeatherData } from "./utils/api-caller.js";
 
-// need to add error handling --------------------------------
-
 function App() {
   const [location, setLocation] = useState("liverpool");
   const [error, setError] = useState(false);
@@ -13,6 +11,7 @@ function App() {
   const [city, setCity] = useState("");
   const [country, setCountry] = useState("");
 
+  //API Request
   useEffect(() => {
     setIsLoading(true);
     getGeoCodes(location)
@@ -28,12 +27,10 @@ function App() {
           })
           .catch((err) => {
             setError(true);
-            console.log(err, "<<woops");
           });
       })
       .catch((err) => {
         setError(true);
-        console.log(err, "<<< err");
       });
   }, [location]);
 
