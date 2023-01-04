@@ -45,7 +45,7 @@ export default function MainDisplay({ weatherObj, city, country }) {
   const [feelsLike, setFeelsLike] = useState(null);
   useEffect(() => {
     const value = Math.round(weatherObj.current.feels_like);
-    const feels = value + "°";
+    const feels = value + "°C";
     setFeelsLike(feels);
   }, [weatherObj]);
 
@@ -68,6 +68,7 @@ export default function MainDisplay({ weatherObj, city, country }) {
       <CityAndDate city={city} country={country} dateToday={dateToday} />
       <TemperatureAndImage
         temperature={temperature}
+        feelsLike={feelsLike}
         image={image}
         weatherDescription={weatherDescription}
       />

@@ -2,7 +2,8 @@ import Search from "./components/Search";
 import MainDisplay from "./components/MainDisplay";
 import { useState, useEffect } from "react";
 import { getGeoCodes, getWeatherData } from "./utils/api-caller.js";
-
+import errorImg from "./images/Error.png";
+import WeeklyWeather from "./components/WeeklyWeather";
 function App() {
   const [location, setLocation] = useState("liverpool");
   const [error, setError] = useState(false);
@@ -18,10 +19,12 @@ function App() {
       .then((response) => {
         const lat = response.data[0].lat;
         const lon = response.data[0].lon;
+        console.log(lat, lon);
         setCity(response.data[0].name);
         setCountry(response.data[0].country);
         getWeatherData(lat, lon)
           .then((response) => {
+            console.log(response);
             setWeatherObj(response.data);
             setIsLoading(false);
           })
@@ -42,7 +45,17 @@ function App() {
           setLocation={setLocation}
           setError={setError}
         />
-        <p id="error">Uh Oh! We couldn't find that one. Please, try again.</p>
+        <div id="error">
+          <img
+            src={errorImg}
+            style={{
+              height: "200px",
+              width: "200px",
+              marginBottom: "15px",
+            }}
+          />
+          <p>Uh Oh! We couldn't find that one. Please, try again.</p>
+        </div>
       </div>
     );
   }
@@ -67,6 +80,7 @@ function App() {
           setError={setError}
         />
         <MainDisplay weatherObj={weatherObj} city={city} country={country} />
+        <WeeklyWeather location={location} weatherObj={weatherObj} />
       </div>
     );
   }
