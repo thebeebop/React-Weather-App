@@ -9,7 +9,7 @@
 body {
   height: 100vh;
   font-family:'Poppins', sans-serif;
-  background-color: rgb(235, 235, 165);
+  background-color: rgb(55, 146, 251);
 }
 
 #root {
@@ -35,12 +35,12 @@ body {
 }
 
 .search-container {
-  margin-top: 20px;
+  margin-top: 10px;
 }
 
 .main-display-container {
   display: flex;
-  height: 650px;
+  height: 660px;
   width: 100%;
   justify-content: space-between;
   flex-direction: column;
@@ -48,21 +48,26 @@ body {
 }
 
 .city-and-date-container {
-  margin-top: 50px;
+  margin-top: 25px;
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-color: rgb(0, 0, 0, 0.3) ;
+  padding: 20px;
+  border-radius: 10px;
 }
 
 .city-name {
   font-size: 25px;
   margin-bottom: 10px;
+  color: white
 }
 
 .date {
-  font-size: 18px;
+  font-size: 22px;
   font-weight: 500;
+  color: white
 }
 
 .extra-info-container {
@@ -73,7 +78,11 @@ body {
   justify-items: center;
   grid-template-rows: 1fr 1fr;
   grid-template-columns: 1fr 1fr 1fr;
-  gap:10px
+  gap:10px;
+  row-gap: 20px;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: rgb(0, 0, 0, 0.3) ;
 }
 
 .mini-container {
@@ -90,6 +99,9 @@ body {
   justify-content: center;
   height: 300px;
   width: 100%;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: rgb(0, 0, 0, 0.3) ;
 }
 
 .temp-and-description-container {
@@ -99,30 +111,58 @@ body {
   align-items: center;
 }
 
+.temperatures-container {
+  display: flex;
+  margin-bottom: 10px;
+}
+
 .extra-info-titles {
-  font-weight: 600;
+  color: white;
+  font-weight: 500;
+  font-size: 12px;
   margin-bottom: 5px;
 }
 
 #temperature {
   font-size: 100px;
+  color: white
 }
 
 #weather-description {
-  font-size: 25px
+  font-size: 20px;
+  color: white
 }
 
 #loading {
 top: 50%;
 position: absolute;
-font-size: 40px;
+font-size: 30px;
 font-weight: 600;
+color: white
 }
 
 #error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   padding: 20px;
   top: 25%;
   position: absolute;
-  font-size: 40px;
+  font-size: 30px;
   font-weight: 600;
+  color: white
+}
+
+#mini-temp {
+  font-weight: 600;
+  font-size: 25px;
+  color: white
+}
+
+#feels-like-temp {
+  margin-left: 8px;
+  font-weight: 500;
+  font-size: 25px;
+  color: white;
+  opacity: 0.8;
 }

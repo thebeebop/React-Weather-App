@@ -26,9 +26,21 @@ export default function Search({ setLocation, setError }) {
         <label>Location:</label>
         <input
           placeholder="e.g. London, GB"
+          required
           value={search}
           onChange={(e) => {
             handleChange(e);
+          }}
+          style={{
+            marginRight: "5px",
+            marginLeft: "5px",
+            color: "black",
+            border: "1px white solid",
+            borderRadius: "15px",
+            paddingLeft: "10px",
+            paddingRight: "10px",
+            paddingTop: "5px",
+            paddingBottom: "5px",
           }}
         ></input>
         <button value="submit">Search</button>
