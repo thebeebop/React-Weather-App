@@ -19,12 +19,10 @@ function App() {
       .then((response) => {
         const lat = response.data[0].lat;
         const lon = response.data[0].lon;
-        console.log(lat, lon);
         setCity(response.data[0].name);
         setCountry(response.data[0].country);
         getWeatherData(lat, lon)
           .then((response) => {
-            console.log(response);
             setWeatherObj(response.data);
             setIsLoading(false);
           })
@@ -54,7 +52,10 @@ function App() {
               marginBottom: "15px",
             }}
           />
-          <p>Uh Oh! We couldn't find that one. Please, try again.</p>
+          <p style={{ width: "100%", textAlign: "center" }}>
+            Bad Request. Try gain. Please, ensure that your search requests are
+            formatted properly.
+          </p>
         </div>
       </div>
     );
@@ -80,6 +81,7 @@ function App() {
           setError={setError}
         />
         <MainDisplay weatherObj={weatherObj} city={city} country={country} />
+
         <WeeklyWeather location={location} weatherObj={weatherObj} />
       </div>
     );

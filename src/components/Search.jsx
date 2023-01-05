@@ -1,5 +1,6 @@
 /// Remember to make frequent commits to github
 import { useState } from "react";
+import magnifyGlass from "../images/magnifying-glass.jpeg";
 
 export default function Search({ setLocation, setError }) {
   const [search, setSearch] = useState("");
@@ -23,7 +24,6 @@ export default function Search({ setLocation, setError }) {
           handleSubmit(e);
         }}
       >
-        <label>Location:</label>
         <input
           placeholder="e.g. London, GB"
           required
@@ -32,18 +32,17 @@ export default function Search({ setLocation, setError }) {
             handleChange(e);
           }}
           style={{
-            marginRight: "5px",
-            marginLeft: "5px",
             color: "black",
-            border: "1px white solid",
+            border: "0",
             borderRadius: "15px",
             paddingLeft: "10px",
             paddingRight: "10px",
-            paddingTop: "5px",
-            paddingBottom: "5px",
+            paddingTop: "10px",
+            paddingBottom: "10px",
+            width: "100%",
+            marginBottom: "5px",
           }}
         ></input>
-        <button value="submit">Search</button>
       </form>
     </>
   );
