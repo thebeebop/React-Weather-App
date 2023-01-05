@@ -10,7 +10,6 @@ function getGeoCodes(location) {
     timeout: 3000,
   })
     .then((response) => {
-      console.log(response);
       return response;
     })
     .catch((err) => {
