@@ -31,17 +31,7 @@ export default function Search({ setLocation, setError }) {
           onChange={(e) => {
             handleChange(e);
           }}
-          style={{
-            color: "black",
-            border: "0",
-            borderRadius: "15px",
-            paddingLeft: "10px",
-            paddingRight: "10px",
-            paddingTop: "10px",
-            paddingBottom: "10px",
-            width: "100%",
-            marginBottom: "5px",
-          }}
+          id="search-input"
         ></input>
       </form>
     </>

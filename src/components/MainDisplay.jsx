@@ -64,7 +64,7 @@ export default function MainDisplay({ weatherObj, city, country }) {
   }, [weatherObj]);
 
   return (
-    <div className="main-display-container">
+    <>
       <CityAndDate city={city} country={country} dateToday={dateToday} />
       <TemperatureAndImage
         temperature={temperature}
@@ -78,6 +78,6 @@ export default function MainDisplay({ weatherObj, city, country }) {
         uvIndex={uvIndex}
         windSpeed={windSpeed}
       />
-    </div>
+    </>
   );
 }
