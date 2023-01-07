@@ -14,13 +14,6 @@ export default function WeeklyWeather({ weatherObj }) {
 
     const weekdays = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
-    let thisWeekDay;
-    if (dayOfWeek === weekdayToday && dateOfMonthToday === dayOfMonth) {
-      thisWeekDay = "Today";
-    } else {
-      thisWeekDay = weekdays[dayOfWeek];
-    }
-
     const months = [
       "Jan",
       "Feb",
@@ -38,7 +31,14 @@ export default function WeeklyWeather({ weatherObj }) {
 
     const thisMonth = months[month];
 
-    return `${thisWeekDay}`;
+    let thisWeekDay;
+    if (dayOfWeek === weekdayToday && dateOfMonthToday === dayOfMonth) {
+      thisWeekDay = "Today";
+      return `${thisWeekDay}`;
+    } else {
+      thisWeekDay = weekdays[dayOfWeek];
+      return `${thisWeekDay}, ${dayOfMonth} ${thisMonth}`;
+    }
   };
 
   if (!dailyForecastArray) {
@@ -46,16 +46,6 @@ export default function WeeklyWeather({ weatherObj }) {
   } else {
     return (
       <div id="weekly-list-container">
-        <p
-          style={{
-            color: "white",
-            fontWeight: 600,
-            fontSize: "18px",
-            marginBottom: "10px",
-          }}
-        >
-          THIS WEEK:
-        </p>
         <ul className="list-of-days">
           {dailyForecastArray.map((day, i) => {
             const fullDate = new Date(day.dt * 1000);
@@ -79,7 +69,7 @@ export default function WeeklyWeather({ weatherObj }) {
                   </p>
                   <div className="daily-containers" style={{ color: "white" }}>
                     <p style={{ fontWeight: 600, fontSize: "18px" }}>{temp}</p>
-                    <img src={img} height="50px" width="50px" />
+                    <img src={img} height="50px" width="50px" alt="" />
                   </div>
                   <p
                     style={{
