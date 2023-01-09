@@ -9,15 +9,13 @@ export default function ExtraInfo({ humidity, feelsLike, uvIndex, windSpeed }) {
         <img
           src={humidityImg}
           alt=""
-          style={{ height: "20px", width: "15px", marginBottom: "10px" }}
+          style={{ height: "15px", width: "10px", marginBottom: "10px" }}
         />
-        <p className="extra-info-titles" style={{ opacity: 0.8 }}>
-          Humidity:
-        </p>
+        <p className="extra-info-titles">Humidity:</p>
         <p
           style={{
             color: "white",
-            fontSize: "15px",
+            fontSize: "12px",
             marginBottom: "5px",
           }}
         >
@@ -29,12 +27,10 @@ export default function ExtraInfo({ humidity, feelsLike, uvIndex, windSpeed }) {
         <img
           src={tempImg}
           alt=""
-          style={{ height: "25px", width: "15px", marginBottom: "10px" }}
+          style={{ height: "20px", width: "10px", marginBottom: "10px" }}
         />
-        <p className="extra-info-titles" style={{ opacity: 0.8 }}>
-          FeelsLike:
-        </p>
-        <p style={{ color: "white", fontSize: "15px", marginBottom: "5px" }}>
+        <p className="extra-info-titles">FeelsLike:</p>
+        <p style={{ color: "white", fontSize: "12px", marginBottom: "5px" }}>
           {feelsLike}
         </p>
       </div>
@@ -43,24 +39,20 @@ export default function ExtraInfo({ humidity, feelsLike, uvIndex, windSpeed }) {
         <img
           alt=""
           src={uvImg}
-          style={{ height: "15px", width: "25px", marginBottom: "15px" }}
+          style={{ height: "10px", width: "20px", marginBottom: "15px" }}
         />
-        <p className="extra-info-titles" style={{ opacity: 0.8 }}>
-          UV Index:
-        </p>
-        <p style={{ color: "white", fontSize: "15px" }}>{uvIndex}</p>
+        <p className="extra-info-titles">UV Index:</p>
+        <p style={{ color: "white", fontSize: "12px" }}>{uvIndex}</p>
       </div>
 
       <div className="mini-container">
         <img
           alt=""
           src={windSpeedImg}
-          style={{ height: "20px", width: "35px", marginBottom: "5px" }}
+          style={{ height: "15px", width: "30px", marginBottom: "5px" }}
         />
-        <p className="extra-info-titles" style={{ opacity: 0.8 }}>
-          Windspeed:
-        </p>
-        <p style={{ color: "white", fontSize: "15px" }}>{windSpeed}</p>
+        <p className="extra-info-titles">Windspeed:</p>
+        <p style={{ color: "white", fontSize: "12px" }}>{windSpeed}</p>
       </div>
     </div>
   );
