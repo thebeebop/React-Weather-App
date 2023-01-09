@@ -41,6 +41,7 @@ export default function ExtraInfo({ humidity, feelsLike, uvIndex, windSpeed }) {
 
       <div className="mini-container">
         <img
+          alt=""
           src={uvImg}
           style={{ height: "15px", width: "25px", marginBottom: "15px" }}
         />
@@ -52,6 +53,7 @@ export default function ExtraInfo({ humidity, feelsLike, uvIndex, windSpeed }) {
 
       <div className="mini-container">
         <img
+          alt=""
           src={windSpeedImg}
           style={{ height: "20px", width: "35px", marginBottom: "5px" }}
         />

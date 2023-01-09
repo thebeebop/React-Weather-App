@@ -33,12 +33,15 @@ export default function SearchField({ setLocation, setError }) {
       onSubmit={(e) => {
         handleSubmit(e);
       }}
+      className="search-container"
     >
       <ThemeProvider theme={theme}>
         <TextField
           label="Search"
           placeholder="e.g. london, gb"
           fullWidth
+          required
+          autoComplete="off"
           value={search}
           onChange={(e) => {
             handleChange(e);
