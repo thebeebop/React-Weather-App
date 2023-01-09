@@ -4,6 +4,7 @@ import { getGeoCodes, getWeatherData } from "./utils/api-caller.js";
 import errorImg from "./images/Error.png";
 import WeeklyWeather from "./components/WeeklyWeather";
 import SearchField from "./components/SearchField";
+import CircularLoader from "./components/Loader";
 
 function App() {
   const [location, setLocation] = useState("liverpool");
@@ -38,7 +39,7 @@ function App() {
 
   if (error) {
     return (
-      <>
+      <div className="app-loading">
         <SearchField setLocation={setLocation} setError={setError} />
         <div className="AppTwo">
           <div id="error">
@@ -52,31 +53,36 @@ function App() {
               alt=""
             />
             <p style={{ width: "100%", textAlign: "center" }}>
-              Bad Request. Try gain. Please, ensure that your search requests
-              are formatted properly.
+              Bad Request. Please, try again.
             </p>
           </div>
         </div>
-      </>
+      </div>
     );
   }
 
   if (isLoading) {
     return (
-      <>
+      <div className="app-loading">
         <SearchField
           location={location}
           setLocation={setLocation}
           setError={setError}
         />
         <div className="AppTwo">
-          <p id="loading">Loading...</p>
+          <div className="loader">
+            <CircularLoader />
+            <p id="loading">Loading...</p>
+          </div>
         </div>
-      </>
+      </div>
     );
   } else {
     return (
       <div className="App">
+        <div className="background-img">
+          <img />
+        </div>
         <SearchField
           className="search-field"
           setLocation={setLocation}

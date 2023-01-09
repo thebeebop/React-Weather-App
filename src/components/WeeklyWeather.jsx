@@ -14,31 +14,15 @@ export default function WeeklyWeather({ weatherObj }) {
 
     const weekdays = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
-    const months = [
-      "Jan",
-      "Feb",
-      "Mar",
-      "Apr",
-      "May",
-      "Jun",
-      "Jul",
-      "Aug",
-      "Sep",
-      "Oct",
-      "Nov",
-      "Dec",
-    ];
-
-    const thisMonth = months[month];
-
     let thisWeekDay;
     if (dayOfWeek === weekdayToday && dateOfMonthToday === dayOfMonth) {
       thisWeekDay = "Today";
-      return `${thisWeekDay}`;
     } else {
       thisWeekDay = weekdays[dayOfWeek];
-      return `${thisWeekDay}, ${dayOfMonth} ${thisMonth}`;
     }
+
+    return `${thisWeekDay}`;
+    // return `${thisWeekDay}, ${dayOfMonth} ${thisMonth}`;
   };
 
   if (!dailyForecastArray) {
@@ -58,25 +42,14 @@ export default function WeeklyWeather({ weatherObj }) {
             return (
               <li key={i}>
                 <div className="list-block">
-                  <p
-                    style={{
-                      color: "white",
-                      fontSize: "20px",
-                      fontWeight: 600,
-                    }}
-                  >
+                  <p className="block-title">
                     {giveDates(dayOfTheWeek, dayOfTheMonth, month)}
                   </p>
                   <div className="daily-containers" style={{ color: "white" }}>
-                    <p style={{ fontWeight: 600, fontSize: "18px" }}>{temp}</p>
-                    <img src={img} height="50px" width="50px" alt="" />
+                    <p>{temp}</p>
+                    <img src={img} className="block-icons" alt="" />
                   </div>
-                  <p
-                    style={{
-                      color: "white",
-                      fontSize: "18px",
-                    }}
-                  >
+                  <p className="block-weather-description">
                     {weatherDescription}
                   </p>
                 </div>

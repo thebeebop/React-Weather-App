@@ -63,6 +63,42 @@ export default function MainDisplay({ weatherObj, city, country }) {
     setWindSpeed(speed);
   }, [weatherObj]);
 
+  const [localTime, setLocalTime] = useState(null);
+
+  useEffect(() => {
+    const time = weatherObj.current.dt + weatherObj.timezone_offset;
+    const timeValue = new Date(time * 1000);
+    let hrs = timeValue.getHours();
+    let mins = timeValue.getMinutes();
+
+    if (hrs < 10) {
+      hrs = "0" + hrs;
+    }
+
+    if (mins < 10) {
+      mins = "0" + mins;
+    }
+    setLocalTime(`${hrs}:${mins}`);
+  }, [weatherObj]);
+
+  // const [sunRise, setSunRise] = useState(null);
+  // useEffect(() => {
+  //   const value = weatherObj.current.sunrise;
+  //   const sunRiseDate = new Date(value * 1000);
+  //   const hour = sunRiseDate.getHours();
+  //   const mins = sunRiseDate.getMinutes();
+  //   setSunRise(`${hour}:${mins}am`);
+  // }, [weatherObj]);
+
+  // const [sunSet, setSunSet] = useState(null);
+  // useEffect(() => {
+  //   const value = weatherObj.current.sunset;
+  //   const sunSetDate = new Date(value * 1000);
+  //   const hour = sunSetDate.getHours();
+  //   const mins = sunSetDate.getMinutes();
+  //   setSunSet(`${hour}:${mins}pm`);
+  // }, [weatherObj]);
+
   return (
     <>
       <CityAndDate city={city} country={country} dateToday={dateToday} />
@@ -71,6 +107,9 @@ export default function MainDisplay({ weatherObj, city, country }) {
         feelsLike={feelsLike}
         image={image}
         weatherDescription={weatherDescription}
+        localTime={localTime}
+        // sunRise={sunRise}
+        // sunSet={sunSet}
       />
       <ExtraInfo
         humidity={humidity}
