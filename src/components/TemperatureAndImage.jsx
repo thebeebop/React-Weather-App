@@ -13,10 +13,16 @@ export default function TemperatureAndImage({
         <p style={{ color: "white", marginBottom: "5px" }}>{sunRise}</p>
         <p style={{ color: "white" }}>{sunSet}</p>
       </div> */}
-      <p style={{ color: "white", marginBottom: "10px" }}>{localTime}</p>
+      <p style={{ color: "white", marginBottom: "10px", fontSize: "13px" }}>
+        {localTime}
+      </p>
       <div className="temp-and-description-container">
         <h1 id="temperature">{temperature}</h1>
-        <img src={image} alt="Weather description icon." />
+        <img
+          src={image}
+          alt="Weather description icon."
+          style={{ height: "90px", width: "90px" }}
+        />
       </div>
       <div className="temperatures-container">
         <p id="mini-temp">{temperature} /</p>
