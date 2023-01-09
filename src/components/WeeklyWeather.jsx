@@ -46,7 +46,7 @@ export default function WeeklyWeather({ weatherObj }) {
                     {giveDates(dayOfTheWeek, dayOfTheMonth, month)}
                   </p>
                   <div className="daily-containers" style={{ color: "white" }}>
-                    <p>{temp}</p>
+                    <p style={{ fontSize: "14px" }}>{temp}</p>
                     <img src={img} className="block-icons" alt="" />
                   </div>
                   <p className="block-weather-description">
