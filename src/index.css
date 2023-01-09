@@ -20,16 +20,17 @@ body {
     background-image: url("./images/milky-blue.png");
     background-size: 1500px 1012px;
     background-repeat: no-repeat;
+    padding: 20px;
   }
   
   .App {
-    height:100%;
+    min-height: 100%;
     width: 100%;
-    padding: 20px;
+    /* padding: 20px; */
     display: grid;
     height: 90%;
     grid-template-columns: 100%;
-    grid-template-rows: 8% 15% 37% 28% 18%;
+    grid-template-rows: 5% 12% 35% 25% 18%;
     row-gap: 10px;
   
   }
@@ -51,7 +52,6 @@ body {
   .search-container {
     min-height: 40px;
     width: 100%;
-    margin-bottom: 10px;
     grid-row: 1 / 2;
   }
   
@@ -114,18 +114,16 @@ body {
   }
   
   .city-name {
-    font-size: 25px;
+    font-size: 22px;
     margin-bottom: 10px;
     color: white
   }
   
   .date {
-    font-size: 22px;
+    font-size: 18px;
     font-weight: 500;
     color: white
   }
-  
-  
   
   .mini-container {
     display: flex;
@@ -173,12 +171,12 @@ body {
   }
   
   #temperature {
-    font-size: 100px;
+    font-size: 80px;
     color: white
   }
   
   #weather-description {
-    font-size: 20px;
+    font-size: 18px;
     color: white
   }
   
@@ -204,14 +202,14 @@ body {
   
   #mini-temp {
     font-weight: 600;
-    font-size: 25px;
+    font-size: 21px;
     color: white
   }
   
   #feels-like-temp {
     margin-left: 8px;
     font-weight: 500;
-    font-size: 25px;
+    font-size: 21px;
     color: white;
     opacity: 0.8;
   }

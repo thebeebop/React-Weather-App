@@ -41,6 +41,7 @@ export default function SearchField({ setLocation, setError }) {
           placeholder="e.g. london, gb"
           fullWidth
           required
+          size="small"
           autoComplete="off"
           value={search}
           onChange={(e) => {
