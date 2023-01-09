@@ -26,11 +26,10 @@ body {
   .App {
     min-height: 100%;
     width: 100%;
-    /* padding: 20px; */
     display: grid;
     height: 90%;
     grid-template-columns: 100%;
-    grid-template-rows: 5% 12% 32% 28% 18%;
+    grid-template-rows: 6% 11% 32% 28% 18%;
     row-gap: 10px;
   
   }
@@ -172,12 +171,12 @@ body {
   }
   
   #temperature {
-    font-size: 80px;
+    font-size: 70px;
     color: white
   }
   
   #weather-description {
-    font-size: 18px;
+    font-size: 14px;
     color: white
   }
   
@@ -203,14 +202,14 @@ body {
   
   #mini-temp {
     font-weight: 600;
-    font-size: 21px;
+    font-size: 18px;
     color: white
   }
   
   #feels-like-temp {
     margin-left: 8px;
     font-weight: 500;
-    font-size: 21px;
+    font-size: 18px;
     color: white;
     opacity: 0.8;
   }
@@ -232,7 +231,7 @@ body {
   .list-block {
     background-color: rgb(0, 0, 0, 0.6);
     border-radius: 10px;
-    padding: 15px;
+    padding: 20px;
     margin-right: 8px;
     display:inline-flex;
     height: 100%;
@@ -251,8 +250,8 @@ body {
   }
 
   .block-icons {
-    height: 70px;
-    width: 70px
+    height: 50px;
+    width: 50px
   }
 
   .block-weather-description {
