@@ -1,6 +1,5 @@
 /// Remember to make frequent commits to github
 import { useState } from "react";
-import magnifyGlass from "../images/magnifying-glass.jpeg";
 
 export default function Search({ setLocation, setError }) {
   const [search, setSearch] = useState("");
