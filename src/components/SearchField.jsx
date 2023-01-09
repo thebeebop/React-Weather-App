@@ -1,5 +1,5 @@
 import { TextField } from "@mui/material";
-import { InputAdornment } from "@mui/material";
+import { InputAdornment, IconButton } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import { blue } from "@mui/material/colors";
@@ -40,7 +40,7 @@ export default function SearchField({ setLocation, setError }) {
           label="Search"
           placeholder="e.g. london, gb"
           fullWidth
-          required
+          // required
           size="small"
           autoComplete="off"
           value={search}
@@ -50,7 +50,9 @@ export default function SearchField({ setLocation, setError }) {
           InputProps={{
             endAdornment: (
               <InputAdornment position="end">
-                <SearchIcon />
+                <IconButton>
+                  <SearchIcon />
+                </IconButton>
               </InputAdornment>
             ),
           }}

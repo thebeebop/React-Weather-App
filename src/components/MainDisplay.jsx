@@ -8,7 +8,9 @@ import ExtraInfo from "./ExtraInfo";
 export default function MainDisplay({ weatherObj, city, country }) {
   const [dateToday, setDateToday] = useState(null);
   useEffect(() => {
-    const date = dateCalibrator();
+    const time = weatherObj.current.dt + weatherObj.timezone_offset;
+    const timeValue = new Date(time * 1000);
+    const date = dateCalibrator(timeValue);
     setDateToday(date);
   }, [weatherObj]);
 

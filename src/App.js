@@ -46,13 +46,13 @@ function App() {
             <img
               src={errorImg}
               style={{
-                height: "200px",
-                width: "200px",
+                height: "150px",
+                width: "150px",
                 marginBottom: "15px",
               }}
               alt=""
             />
-            <p style={{ width: "100%", textAlign: "center" }}>
+            <p style={{ width: "100%", textAlign: "center", fontSize: "20px" }}>
               Bad Request. Please, try again.
             </p>
           </div>
