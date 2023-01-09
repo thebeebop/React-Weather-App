@@ -6,7 +6,7 @@ const units = "metric";
 function getGeoCodes(location) {
   return axios({
     method: "get",
-    url: `http://api.openweathermap.org/geo/1.0/direct?q=${location}&limit=3&appid=${apiKey}`,
+    url: `https://api.openweathermap.org/geo/1.0/direct?q=${location}&limit=3&appid=${apiKey}`,
     timeout: 3000,
   })
     .then((response) => {
