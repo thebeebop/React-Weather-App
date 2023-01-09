@@ -40,7 +40,7 @@ export default function SearchField({ setLocation, setError }) {
           label="Search"
           placeholder="e.g. london, gb"
           fullWidth
-          // required
+          required
           size="small"
           autoComplete="off"
           value={search}
@@ -51,7 +51,11 @@ export default function SearchField({ setLocation, setError }) {
             endAdornment: (
               <InputAdornment position="end">
                 <IconButton>
-                  <SearchIcon />
+                  <SearchIcon
+                    onClick={(e) => {
+                      handleSubmit(e);
+                    }}
+                  />
                 </IconButton>
               </InputAdornment>
             ),
