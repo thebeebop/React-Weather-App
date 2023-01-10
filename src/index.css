@@ -9,15 +9,32 @@
 body {
   height: 100vh;
   font-family:'Poppins', sans-serif;
-  /* background-color: rgb(55, 146, 251); */
 }
 
 /* Mobile */
 @media only screen and (max-width: 600px) {
-  #root {
+  /* #root {
+    height: 100vh;
+    width: 100vw;
+    background-image: url("./images/milky-purple.jpg");
+    background-size: 600px 1000px;
+    background-repeat: no-repeat;
+    padding: 20px;
+  } */
+
+  .background-day {
     height: 100vh;
     width: 100vw;
     background-image: url("./images/milky-blue.png");
+    background-size: 600px 1000px;
+    background-repeat: no-repeat;
+    padding: 20px;
+  }
+
+  .background-night {
+    height: 100vh;
+    width: 100vw;
+    background-image: url("./images/milky-purple.jpg");
     background-size: 600px 1000px;
     background-repeat: no-repeat;
     padding: 20px;
@@ -36,6 +53,15 @@ body {
   
   .app-loading {
     height: 100%;
+  }
+
+  .app-loading-background {
+    height: 100vh;
+    width: 100vw;
+    background-image: url("./images/milky-blue.png");
+    background-size: 600px 1000px;
+    background-repeat: no-repeat;
+    padding: 20px;
   }
   
   .AppTwo {
