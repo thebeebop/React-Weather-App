@@ -32,9 +32,9 @@ export default function SearchField({ setLocation, setError }) {
     <form
       onSubmit={(e) => {
         e.preventDefault();
-        // if (search) {
-        handleSubmit(e);
-        // }
+        if (search) {
+          handleSubmit(e);
+        }
       }}
       className="search-container"
     >
