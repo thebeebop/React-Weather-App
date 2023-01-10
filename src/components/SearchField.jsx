@@ -31,7 +31,9 @@ export default function SearchField({ setLocation, setError }) {
   return (
     <form
       onSubmit={(e) => {
-        handleSubmit(e);
+        if (search) {
+          handleSubmit(e);
+        }
       }}
       className="search-container"
     >
@@ -52,7 +54,9 @@ export default function SearchField({ setLocation, setError }) {
                 <IconButton>
                   <SearchIcon
                     onClick={(e) => {
-                      handleSubmit(e);
+                      if (search) {
+                        handleSubmit(e);
+                      }
                     }}
                   />
                 </IconButton>
