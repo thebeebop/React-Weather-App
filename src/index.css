@@ -13,12 +13,12 @@ body {
 }
 
 /* Mobile */
-@media only screen and (max-width: 700px) {
+@media only screen and (max-width: 600px) {
   #root {
     height: 100vh;
     width: 100vw;
     background-image: url("./images/milky-blue.png");
-    background-size: 600px 1100px;
+    background-size: 600px 1000px;
     background-repeat: no-repeat;
     padding: 20px;
   }
@@ -285,7 +285,7 @@ body {
 }
 
 /* Desktop */
-@media only screen and (min-width: 700px) {
+@media only screen and (min-width: 600px) {
   #root {
     height: 100vh;
     width: 100vw;

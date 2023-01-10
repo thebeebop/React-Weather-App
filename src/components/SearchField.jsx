@@ -31,6 +31,7 @@ export default function SearchField({ setLocation, setError }) {
   return (
     <form
       onSubmit={(e) => {
+        e.preventDefault();
         if (search) {
           handleSubmit(e);
         }
