@@ -313,6 +313,9 @@ body {
     background-size: 2560px 1200px;
     background-repeat: no-repeat;
     padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   .background-night {
@@ -322,6 +325,9 @@ body {
     background-size: 2560px 1200px;
     background-repeat: no-repeat;
     padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   .app-loading-background {
@@ -400,7 +406,8 @@ body {
     display:grid;
     height:100%;
     width:100%;
-    justify-items: center;
+    align-items: center;
+    align-content: center;
     grid-template-rows: 1fr 1fr;
     grid-template-columns: 1fr 1fr 1fr ;
     gap:10px;
@@ -495,6 +502,8 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    height: 100%;
+    width: 100%
   }
 
   .mini-container img {
