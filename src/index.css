@@ -13,14 +13,7 @@ body {
 
 /* Mobile */
 @media only screen and (max-width: 600px) {
-  /* #root {
-    height: 100vh;
-    width: 100vw;
-    background-image: url("./images/milky-purple.jpg");
-    background-size: 600px 1000px;
-    background-repeat: no-repeat;
-    padding: 20px;
-  } */
+
 
   .background-day {
     height: 100vh;
@@ -312,18 +305,32 @@ body {
 
 /* Desktop */
 @media only screen and (min-width: 600px) {
-  #root {
+
+  .background-day {
     height: 100vh;
     width: 100vw;
     background-image: url("./images/milky-blue.png");
-    background-size: 2560px 1080px;
-    /* background-repeat: no-repeat; */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    /* padding-left: 100px;
-    padding-right: 100px; */
+    background-size: 2560px 1200px;
+    background-repeat: no-repeat;
+    padding: 20px;
+  }
+
+  .background-night {
+    height: 100vh;
+    width: 100vw;
+    background-image: url("./images/milky-purple.jpg");
+    background-size: 2560px 1200px;
+    background-repeat: no-repeat;
+    padding: 20px;
+  }
+
+  .app-loading-background {
+    height: 100vh;
+    width: 100vw;
+    background-image: url("./images/milky-blue.png");
+    background-size: 2560px 1200px;
+    background-repeat: no-repeat;
+    padding: 20px;
   }
 
   .App {
