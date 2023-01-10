@@ -32,9 +32,9 @@ export default function SearchField({ setLocation, setError }) {
     <form
       onSubmit={(e) => {
         e.preventDefault();
-        if (search) {
-          handleSubmit(e);
-        }
+        // if (search) {
+        handleSubmit(e);
+        // }
       }}
       className="search-container"
     >
@@ -52,14 +52,14 @@ export default function SearchField({ setLocation, setError }) {
           InputProps={{
             endAdornment: (
               <InputAdornment position="end">
-                <IconButton>
-                  <SearchIcon
-                    onClick={(e) => {
-                      if (search) {
-                        handleSubmit(e);
-                      }
-                    }}
-                  />
+                <IconButton
+                  onClick={(e) => {
+                    if (search) {
+                      handleSubmit(e);
+                    }
+                  }}
+                >
+                  <SearchIcon />
                 </IconButton>
               </InputAdornment>
             ),
