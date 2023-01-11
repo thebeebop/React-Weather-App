@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import { dateCalibrator } from "../utils/date-calibrator";
 import { uvIndexCalc } from "../utils/uvi-determinator";
 import CityAndDate from "./CityAndDate";
 import TemperatureAndImage from "./TemperatureAndImage";
@@ -10,7 +9,32 @@ export default function MainDisplay({ weatherObj, city, country }) {
   useEffect(() => {
     const time = weatherObj.current.dt + weatherObj.timezone_offset;
     const timeValue = new Date(time * 1000);
-    const date = dateCalibrator(timeValue);
+    const weekDay = timeValue.getDay();
+    const dayOfMonth = timeValue.getDate();
+    const month = timeValue.getMonth();
+
+    const weeks = ["Sun", "Mon", "Tues", "Wed", "Thu", "Fri", "Sat"];
+
+    const months = [
+      "Jan",
+      "Feb",
+      "Mar",
+      "Apr",
+      "May",
+      "Jun",
+      "Jul",
+      "Aug",
+      "Sep",
+      "Oct",
+      "Nov",
+      "Dec",
+    ];
+
+    const thisMonth = months[month];
+    const thisDay = weeks[weekDay];
+
+    const date = `${thisDay}, ${dayOfMonth} ${thisMonth}`;
+
     setDateToday(date);
   }, [weatherObj]);
 
@@ -83,24 +107,6 @@ export default function MainDisplay({ weatherObj, city, country }) {
     setLocalTime(`${hrs}:${mins}`);
   }, [weatherObj]);
 
-  // const [sunRise, setSunRise] = useState(null);
-  // useEffect(() => {
-  //   const value = weatherObj.current.sunrise;
-  //   const sunRiseDate = new Date(value * 1000);
-  //   const hour = sunRiseDate.getHours();
-  //   const mins = sunRiseDate.getMinutes();
-  //   setSunRise(`${hour}:${mins}am`);
-  // }, [weatherObj]);
-
-  // const [sunSet, setSunSet] = useState(null);
-  // useEffect(() => {
-  //   const value = weatherObj.current.sunset;
-  //   const sunSetDate = new Date(value * 1000);
-  //   const hour = sunSetDate.getHours();
-  //   const mins = sunSetDate.getMinutes();
-  //   setSunSet(`${hour}:${mins}pm`);
-  // }, [weatherObj]);
-
   return (
     <>
       <CityAndDate city={city} country={country} dateToday={dateToday} />
@@ -110,8 +116,6 @@ export default function MainDisplay({ weatherObj, city, country }) {
         image={image}
         weatherDescription={weatherDescription}
         localTime={localTime}
-        // sunRise={sunRise}
-        // sunSet={sunSet}
       />
       <ExtraInfo
         humidity={humidity}

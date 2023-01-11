@@ -14,9 +14,9 @@
   body {
     height: 100vh;
     font-family:'Poppins', sans-serif;
-    background-image: url("./images/milky-blue.png");
+    /* background-image: url("./images/milky-blue.png");
     background-size: 600px 1000px;
-    
+     */
   }
 
   .background-day {
@@ -313,9 +313,9 @@
   body {
     height: 100vh;
     font-family:'Poppins', sans-serif;
-    background-image: url("./images/milky-blue.png");
-    background-size: 2560px 1200px;
-    background-repeat: no-repeat;
+    /* background-image: url("./images/milky-blue.png"); */
+    /* background-size: 2560px 1200px;
+    background-repeat: no-repeat; */
   }
 
   .background-day {
