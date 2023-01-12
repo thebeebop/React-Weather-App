@@ -1,6 +1,6 @@
 # Weather Widget
 
-I started this project as a way to challenge and re-kindle some of my React skills, whilst also learning how to navigate and how to handle API calls and display data in a UI application.
+I started this project as a way to challenge and re-kindle some of my React skills, whilst also learning how to navigate and handle API calls and display data as seperate UI elements.
 
 What I learnt:
 
