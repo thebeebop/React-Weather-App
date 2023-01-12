@@ -9,3 +9,4 @@ What I learnt:
 - How to work with a JSON object and extract the relevant data needed.
 - How to differentiate and utilise both stateful and stateless componenets. 
 - How to manage props and pass props down through components.
+- Dynamic Renderring with a day/night theme - background wallpaper changes depending on the current time in relation to the local times of both thesunrise and sunset values.
